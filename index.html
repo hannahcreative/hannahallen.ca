@@ -4,28 +4,28 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Hannah Allen</title>
-
+	<link type="image/png" href="images/favicon.png" rel="icon">
 	<link rel="stylesheet" type="text/css" href="css/flexslider.css"/>
-	<!-- <link rel="stylesheet" href="jquery.sidr.dark.css"> -->
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link rel="stylesheet" href="css/animations.css">
 	<link href='http://fonts.googleapis.com/css?family=Muli:300,400,400italic,300italic|Pacifico' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
 </head>
 
 <body>
-	<div class="title">	
+	<div id="home" class="title">	
 		<div class="section">
 			<div class="inner-wrapper">
 				<div class="block">
 				  <h1>Hannah Allen</h1>
 				  <h2>web developer + creative thinker</h2>
+				  <a href="" class="hamburger"><img src="images/menu-2.svg"></a>
 				</div>
 			</div>
 		</div> 
 			
-		<a href="" class="hamburger"><img src="images/menu-2.svg"></a>
+		
 	
 			<ul class="nav">
 				<li><a href="#home" class="homeNav">home</a></li>
@@ -43,7 +43,7 @@
 				<img class="me" src="images/me.jpg">
 				<!-- <p><span class="bold">Hello, I'm Hannah.</span><br>I love to build websites. When I was first started coding I was lucky to land an internship with <a href="http://ladieslearningcode.com/">Ladies Learning Code</a>.  I immersed myself in an environment that encouraged girls and women to learn coding and develop tech skills.  I'm passionate about coding not only because is it a creative outlet, but I can constantly challenge myself and learn new things in a fast growing industry.</p> -->
 
-				<p><span class="bold">Hi, I'm Hannah Allen.</span> I am an independant web developer from Toronto, Canada.  I'm passionate about coding not only because it is a creative outlet, but I can constantly challange myself and learn new things in a fast growing industry.</p>
+				<p><span class="bold">Hi, I'm Hannah Allen.</span><br>I'm an independent web developer from Toronto, Canada, and I love to build fantastic websites from scratch.  It all begins with a pen and some graph paper which I transform into a user-friendly website, often with a CMS such as Wordpress.  I'm currently accepting projects, so if you're looking for a great web developer <a href="#contact">let's talk!</a></p>
 			</div> <!-- aboutWrapper -->
 	</div> <!-- about -->	
 
@@ -62,7 +62,7 @@
 					<img class="icon glow" src="images/screens.jpg">
 					<div class="text">
 						<h4>Responsive Web Design</h4>
-						<p>I like to create sites that are responsive - you can view them on any sized screen and they will still look great and function without interruption.</p>
+						<p>I create sites that are responsive - you can view them on any sized screen and they will still look great and function without interruption.</p>
 					</div> <!-- text -->
 				</div> <!-- design column -->
 				<div class="photo column">
@@ -122,18 +122,30 @@
 
 
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
- <script src="https://rawgithub.com/kswedberg/jquery-smooth-scroll/master/jquery.smooth-scroll.min.js"></script>
+ <script src="js/jquery.smooth-scroll.min.js"></script>
  <script src="js/jquery.sticky.js"></script>
  <script src="js/jquery.flexslider-min.js"></script>
 
- <!-- // <script src="jquery.sidr.min.js"></script> -->
 
 <script>
  $(function(){
-    $('a').smoothScroll({offset:-47});
-  
-		// sticky nav bar
-    $(".nav").sticky({
+    
+
+    // $('a').smoothScroll({offset:-47});
+    
+    // $( window ).resize(function(){
+    	var windowWidth = $( window ).width();
+    	if (windowWidth <= 540 ) {
+    		$('a').smoothScroll({offset:0});
+    	}
+    	else {
+    		$('a').smoothScroll({offset:-47});
+    	}
+
+    // }); 
+
+ 		// sticky nav bar
+    $('.nav').sticky({
     	//topSpacing:0,
     	wrapperClassName:'fixed'
     });
